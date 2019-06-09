@@ -1,5 +1,6 @@
 import discord
 import random
+import datetime
 
 client = discord.Client()
 
@@ -11,14 +12,14 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('===============')
-    activity = discord.Game(name="슈발뇽마음속♡♡")
+    activity = discord.Game(name="슈발뇽 마음속♡")
     await client.change_presence(status=discord.Status.idle, activity=activity)
 
 @client.event
 async def on_message(message):
     if message.author.bot:
         return None
-
+    
     if message.content.startswith("사다리"):
         mans = message.content[4:]
         man = mans.split(" ")
@@ -34,7 +35,18 @@ async def on_message(message):
         ateam = int(team + sol)
         bteam = int(team)
 
-
+        now = datetime.datetime.now()
+        chetnum = int(now.second) % 4
+        if chetnum == 0:
+            await message.channel.send('슈발뇽이 최고에요~')                    
+        if chetnum == 1:
+            await message.channel.send('슈발뇽이랑 친구할래~')                    
+        if chetnum == 2:
+            await message.channel.send('슈발뇽한테 와라~')                    
+        if chetnum == 3:
+            await message.channel.send('슈발뇽이 될꺼야~')                                
+        
+        
         random.shuffle(man)
         await message.channel.send('-----------------------------------------')
         for i in range(0, ateam  ) :
