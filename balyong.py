@@ -11,7 +11,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('===============')
-    activity = discord.Game(name="슈발뇽마음속")
+    activity = discord.Game(name="슈발뇽마음속♡♡")
     await client.change_presence(status=discord.Status.idle, activity=activity)
 
 @client.event
@@ -43,6 +43,6 @@ async def on_message(message):
         for j in range(ateam , man_cnt) :
             await message.channel.send(" - 뇽팀 -----> " + man[j] )
         await message.channel.send('-----------------------------------------')            
-        await message.channel.send("이봐 친구들 조합이 이상하면 적당히 섞어서하라규!")     
+        await message.channel.send("우!유!빛!깔! 슈발뇽~♡♡")     
 
 client.run(token)
