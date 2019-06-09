@@ -43,8 +43,6 @@ async def on_message(message):
         for j in range(ateam , man_cnt) :
             await message.channel.send(" - 뇽팀 -----> " + man[j] )
         await message.channel.send('-----------------------------------------')            
-        await message.channel.send("이봐 친구들 조합이 이상하면 적당히 섞어서하라규!")            
-    else :
-        await message.channel.send('슈발뇽이랑 친구할래?\n 사용법) 사다리 닉넴1 닉넴2 닉넴3 엔터 끝~')
+        await message.channel.send("이봐 친구들 조합이 이상하면 적당히 섞어서하라규!")     
 
 client.run(token)
