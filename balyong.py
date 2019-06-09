@@ -13,7 +13,6 @@ async def on_ready():
     print('===============')
     activity = discord.Game(name="슈발뇽마음속♡♡")
     await client.change_presence(status=discord.Status.idle, activity=activity)
-    await message.channel.send('짜짠') 
 
 @client.event
 async def on_message(message):
