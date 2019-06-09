@@ -3,7 +3,7 @@ import random
 
 client = discord.Client()
 
-token = 'NTg3MDU2MDAxNjEwNTQ3Mzk3.XPxBKw.NNGNWA9l4hBMb6Qh1Rrb2_xFHPE'
+token = 'NTg3MDk4NjM2MTAyNjY0MjA5.XPxoYQ.QExCk91jcH8LirlmnoHtUo_ATrU'
 
 @client.event
 async def on_ready():
