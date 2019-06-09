@@ -11,7 +11,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('===============')
-    activity = discord.Game(name="슈발뇽마음속♡♡")
+    activity = discord.Game(name="슈발뇽마음속")
     await client.change_presence(status=discord.Status.idle, activity=activity)
 
 @client.event
@@ -24,7 +24,7 @@ async def on_message(message):
         man = mans.split(" ")
         man_cnt = len(man)
         if man_cnt > 10:
-            await message.channel.send('슈발뇽은 머리가 나뻐서 2팀까지 못짜네~ 미안행♡♡')            
+            await message.channel.send('슈발뇽은 머리가 나뻐서 2팀까지 못짜네~ 미안행')            
             return None
 
 
@@ -38,10 +38,10 @@ async def on_message(message):
         random.shuffle(man)
         await message.channel.send('-----------------------------------------')
         for i in range(0, ateam  ) :
-            await message.channel.send(" * 발팀 -----> " + man[i] )
+            await message.channel.send(" - 발팀 -----> " + man[i] )
         await message.channel.send('-----------------------------------------')            
         for j in range(ateam , man_cnt) :
-            await message.channel.send(" * 뇽팀 -----> " + man[j] )
+            await message.channel.send(" - 뇽팀 -----> " + man[j] )
         await message.channel.send('-----------------------------------------')            
         await message.channel.send("이봐 친구들 조합이 이상하면 적당히 섞어서하라규!")            
     else :
