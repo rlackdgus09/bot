@@ -1,6 +1,7 @@
 import discord
 import random
 import datetime
+import requests, json
 
 client = discord.Client()
 
@@ -56,5 +57,58 @@ async def on_message(message):
             await message.channel.send(" - 뇽팀 -----> " + man[j] )
         await message.channel.send('-----------------------------------------')            
         await message.channel.send("우!유!빛!깔! 슈발뇽~♡♡")     
+        
+        
+    if message.content.startswith("찾아죠"):
+        pnick = message.content[4:]
+        URL1 = 'https://api.neople.co.kr/cy/players?nickname='+pnick+'&wordType=full&apikey=70sfxPDKxA2crKkHvsElnbn0CYFtE6KK' 
+        response1 = requests.get(URL1) 
+        rcode1 = response1.status_code 
+        if rcode1 != 200:
+            await message.channel.send('정보가저오다 실패했썽~ 미안행♡♡')            
+            return None
+        await message.channel.send('정보를 찾고 있썽 기달려봥♡')                        
+        pinfo = response1.json()
+        rows = pinfo["rows"]
+        row = rows[0]
+        playerId = row["playerId"]
+        nickname = row["nickname"]
+        grade = row["grade"]
+        await message.channel.send( str(grade) +'급 ' + nickname + '의 전적을 찾아보자~')
+        print(playerId)
+
+        URL2 = 'https://api.neople.co.kr/cy/players/' + playerId + '?apikey=70sfxPDKxA2crKkHvsElnbn0CYFtE6KK' 
+        response2 = requests.get(URL2) 
+        rcode2 = response2.status_code 
+        if rcode2 != 200:
+            await message.channel.send('정보가저오다 실패했썽~ 미안행♡♡')            
+            return None
+        idinfo = response2.json()
+        clanName = idinfo["clanName"]
+        ratingPoint = idinfo["ratingPoint"]
+        maxRatingPoint = idinfo["maxRatingPoint"]
+        tierName = idinfo["tierName"]
+        records = idinfo["records"]
+
+        await message.channel.send( clanName + ' 클랜에 몸담고 있네 요놈!')
+        await message.channel.send( ' 현재 레이팅은 ' + str(ratingPoint) + ' 포인트! 최고 레이팅은 음 ' + str(maxRatingPoint) + ' 포인트!')
+        await message.channel.send( ' ' + str(tierName) + ' 티어야!') 
+        await message.channel.send( ' 전적은~ 음~') 
+
+        records_cnt = len(records)
+        for i in range(0, records_cnt  ) :
+            record1 = records[i]
+            gameTypeId = record1["gameTypeId"]
+            gameTypeName = ' 공식'
+            if gameTypeId == 'normal' :
+                gameTypeName = ' 일반'
+            winCount1 = record1["winCount"]
+            loseCount1 = record1["loseCount"]
+            stopCount1 = record1["stopCount"]
+            await message.channel.send( gameTypeName + '은 ' + str(winCount1) + '승 ' + str(loseCount1) + '패 ' + str(stopCount1) + '중단') 
+
+        await message.channel.send("우!유!빛!깔! 슈발뇽~♡♡")   
+        
+        
 
 client.run(token)
