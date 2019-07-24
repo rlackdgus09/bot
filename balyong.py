@@ -51,12 +51,13 @@ async def on_message(message):
         random.shuffle(man)
         await message.channel.send('-----------------------------------------')
         for i in range(0, ateam  ) :
-            await message.channel.send(" - 발팀 -----> " + man[i] )
+            await message.channel.send(" - 슈팀 -----> " + man[i] )
         await message.channel.send('-----------------------------------------')            
         for j in range(ateam , man_cnt) :
-            await message.channel.send(" - 뇽팀 -----> " + man[j] )
+            await message.channel.send(" - 발팀 -----> " + man[j] )
         await message.channel.send('-----------------------------------------')            
-        await message.channel.send("우!유!빛!깔! 슈발뇽~♡♡")     
+        await message.channel.send("우!유!빛!깔! 슈발뇽~♡♡") 
+        await message.channel.send("슈발뇽을 기억해줘 ㅠ_ㅠ")     
         
         
     if message.content.startswith("찾아죠"):
