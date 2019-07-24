@@ -48,6 +48,7 @@ async def on_message(message):
             await message.channel.send('슈발뇽이 될꺼야~')                                
         
         
+        
         random.shuffle(man)
         await message.channel.send('-----------------------------------------')
         for i in range(0, ateam  ) :
