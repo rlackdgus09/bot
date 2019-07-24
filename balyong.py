@@ -57,8 +57,6 @@ async def on_message(message):
             await message.channel.send(" - 발팀 -----> " + man[j] )
         await message.channel.send('-----------------------------------------')            
         await message.channel.send("우!유!빛!깔! 슈발뇽~♡♡")
-        await message.channel.send("슈발뇽을 잊지 말아죠 ㅠ_ㅠ")
-        
         
         
     if message.content.startswith("찾아죠"):
