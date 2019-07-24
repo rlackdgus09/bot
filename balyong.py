@@ -5,7 +5,7 @@ import requests, json
 
 client = discord.Client()
 
-token = 'NTg3MDk4NjM2MTAyNjY0MjA5.XPxoYQ.QExCk91jcH8LirlmnoHtUo_ATrU'
+token = 'NTg3MDk4NjM2MTAyNjY0MjA5.XThxGQ.btGjYMupNVWR2kEj3k5PgLLG5r8'
 
 @client.event
 async def on_ready():
@@ -56,7 +56,8 @@ async def on_message(message):
         for j in range(ateam , man_cnt) :
             await message.channel.send(" - 발팀 -----> " + man[j] )
         await message.channel.send('-----------------------------------------')            
-        await message.channel.send("우!유!빛!깔! 슈발뇽~♡♡") 
+        await message.channel.send("우!유!빛!깔! 슈발뇽~♡♡")
+        await message.channel.send("슈발뇽을 잊지 말아죠 ㅠ_ㅠ")
         
         
         
