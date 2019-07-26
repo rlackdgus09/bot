@@ -5,7 +5,7 @@ import requests, json
 
 client = discord.Client()
 
-token = 'NTg3MDk4NjM2MTAyNjY0MjA5.XTrHCg.w8klKzDnTUqS7m-7imS7XVd9QKg'
+token = 'NTg3MDk4NjM2MTAyNjY0MjA5.XTrJFQ.UsZ2iYtUjVZ3QTgHKfUWp9-Y7WA'
 
 @client.event
 async def on_ready():
@@ -111,5 +111,5 @@ async def on_message(message):
         await message.channel.send("우!유!빛!깔! 슈발뇽~♡♡")   
         
         
-access_token = os.environ["BOT_TOKEN"]
-client.run(access_token)
+
+client.run(token)
