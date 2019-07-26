@@ -111,5 +111,5 @@ async def on_message(message):
         await message.channel.send("우!유!빛!깔! 슈발뇽~♡♡")   
         
         
-
-client.run(token)
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
