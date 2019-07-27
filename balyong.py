@@ -5,7 +5,7 @@ import requests, json
 
 client = discord.Client()
 
-token = 'NjA0MjQ5Njc0OTU3ODQ4NTk2.XTx3ww.7i6rTeoKDkTq5SHv-arO4wmu_rc'
+token = 'NjA0MjQ5Njc0OTU3ODQ4NTk2.XTyAvw.TyQ7sE_mwb0mvjoYHf3-8wBI7dk'
 
 @client.event
 async def on_ready():
